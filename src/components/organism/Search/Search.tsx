@@ -11,12 +11,12 @@ import './style.css';
 
 
 export const Search = () => {
+
     return (
         <div className='search'>
-            <ImageInput src={len} alt='len' width={12} height={13}/>
-             <ImageButton src={char} alt='char' width={12} height={12}/>
+            <ImageInput src={len} alt='len' width={12} height={13} />
+            <ImageButton src={char} alt='char' width={12} height={12} />
         </div>
-
     );
 };
 
