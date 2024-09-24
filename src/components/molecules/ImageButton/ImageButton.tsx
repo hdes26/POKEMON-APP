@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import Image from '../../atoms/Image/Image';
-import SortCard from '../../organism/SortCard/SortCard';
+
+import { active } from '../../../redux/features/modalSlice'
+import { useAppDispatch } from '../../../redux/hooks'
 
 import './style.css';
 
@@ -14,20 +16,19 @@ interface ImageButtonProps {
 }
 
 export const ImageButton = (props: ImageButtonProps) => {
-    const [isSortCardOpen, setIsSortCardOpen] = useState(false);
 
-    const handleOpenModal = () => {
-        setIsSortCardOpen(true);
+
+    const dispatch = useAppDispatch()
+
+    const handleOpenModal = () => {        
+        dispatch(active())
     };
 
-    const handleCloseModal = () => {
-        setIsSortCardOpen(false);
-    };
+
 
     return (
         <button className='image-button' onClick={handleOpenModal}>
             <Image alt='len' src={props.src} width={props.width} height={props.height} />
-            <SortCard isVisible={isSortCardOpen} onClose={handleCloseModal} />
         </button>
 
     );

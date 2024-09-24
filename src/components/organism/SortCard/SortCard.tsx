@@ -2,16 +2,10 @@ import React from 'react';
 import RadioButtonLabel from '../../molecules/RadioButtonLabel/RadioButtonLabel';
 import Label from '../../atoms/Label/Label';
 
+
 import './style.css';
 
-interface SortCardProps {
-    isVisible: boolean;
-    onClose: () => void;
-}
-
-export const SortCard = ({ isVisible }: SortCardProps) => {
-
-    if (!isVisible) return null;
+export const SortCard = () => {
 
     return (
         <div className='sort-card'>
