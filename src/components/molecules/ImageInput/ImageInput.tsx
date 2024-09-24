@@ -5,6 +5,7 @@ import Input from '../../atoms/Input/Input';
 import Image from '../../atoms/Image/Image';
 
 import './style.css';
+import { useAppSelector } from '../../../redux/hooks';
 
 interface ImageInputProps {
     src: string;
@@ -13,10 +14,27 @@ interface ImageInputProps {
     height: number;
 }
 export const ImageInput = (props: ImageInputProps) => {
+    const currentSort = useAppSelector((state: any) => state.sortReducer.selectedSection);
+
+    console.log(currentSort);
+
+    let text = 'Search'
+
+    if (currentSort === 'number') {
+        text = '#'
+    }
+
+    if (currentSort === 'name') {
+        text = 'Search'
+    }
+
+
+
+
     return (
         <div className='image-input'>
             <Image alt={props.alt} src={props.src} width={props.width} height={props.height} />
-            <Input text='' placeholder='Search' type='text' />
+            <Input text='' placeholder={text} type='text' />
         </div>
 
     );
