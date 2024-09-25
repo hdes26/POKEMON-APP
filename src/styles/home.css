@@ -1,0 +1,20 @@
+/* POKEMON LIST */
+
+
+
+.home .pokemon-list .pokemon-card .number p {
+    font-size: small;
+    padding-right: 10px;
+    margin: 0px;
+    color: #666666;
+}
+
+
+
+.home .pokemon-list .pokemon-card .name p {
+    line-height: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0px;
+    padding-bottom: 5px;
+}
