@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# Prueba Tecnica Tita Media Hernan Escorcia
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Instalación 🔧
 
-## Available Scripts
+### _1. clone el repositorio_
 
-In the project directory, you can run:
+```
+git clone https://github.com/hdes26/POKEMON-APP
+```
 
-### `npm start`
+### _2. instale las dependencias_
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+npm install
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
+### _3. corremos el proyecto_
 
-### `npm test`
+```
+npm run start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
 
-### `npm run build`
+## Recursos 🔗
+[Repositorio Github](https://github.com/hdes26/POKEMON-APP) 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+La aplicación se abrirá en tu navegador en `http://localhost:3000`.
 
-### `npm run eject`
+## 📦 Estructura del proyecto
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Este proyecto utiliza el enfoque de **Atomic Design** para la organización de componentes. La estructura de carpetas es la siguiente:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **atoms**: Componentes básicos e indivisibles (p.ej., botones, títulos, imágenes).
+- **molecules**: Componentes compuestos que combinan átomos (p.ej., tarjetas de Pokémon).
+- **organisms**: Componentes más complejos que contienen moléculas (p.ej., listas de Pokémon).
+- **templates**: Layouts que definen la estructura de las páginas.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🔎 Curiosidades
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+ - Al ser una API publica hay limitaciones en los request que se realizan
+ - No sabia que esta api tenia extencion para graphql 😅 como fan de pokemon me alegro mucho
+ - Me hubiese gustado poder terminar la app al 100% pero tuve tiempo limitado 😅
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🎉 Agradecimiento
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Espero que el proyecto realizado en el lapso de tiempo sea de su agrado , disfrute mucho esta prueba tecnica 🐉
