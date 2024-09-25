@@ -16,8 +16,6 @@ interface ImageInputProps {
 export const ImageInput = (props: ImageInputProps) => {
     const currentSort = useAppSelector((state: any) => state.sortReducer.selectedSection);
 
-    console.log(currentSort);
-
     let text = 'Search'
 
     if (currentSort === 'number') {

@@ -7,7 +7,7 @@
     background-color: white;
     padding: 24px 12px 0px 12px;
     border-radius: 8px;
-    height: calc(93vh - 100px);
+    height: 75vh;
     box-shadow: 0px 1px 3px 1px #00000040 inset;
     margin: 1rem .5rem;
 }

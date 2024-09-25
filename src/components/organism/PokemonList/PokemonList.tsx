@@ -1,17 +1,16 @@
 import React from 'react';
 import PokemonCard from '../../molecules/PokemonCard/PokemonCard';
-import useGetPokemons from '../../../hooks/useGetPokemons'
 import './style.css';
-
-
+import { useAppSelector } from '../../../redux/hooks';
+import { Pokemon } from '../../../types/pokemon';
 
 export const PokemonList: React.FC = () => {
-    const { pokemonList } = useGetPokemons()
-
+    const currentPokemons = useAppSelector((state) => state.pokemonReducer.pokemons);
+    
     return (
         <div className="pokemon-list">
-            {pokemonList.length > 0 ? (
-                pokemonList.map((pokemon) => (
+            {currentPokemons.length > 0 ? (
+                currentPokemons.map((pokemon: Pokemon) => (
                     <PokemonCard
                         src={pokemon.pokemon_v2_pokemonsprites[0].sprites.other.home.front_default}
                         key={pokemon.id}
@@ -20,7 +19,7 @@ export const PokemonList: React.FC = () => {
                     />
                 ))
             ) : (
-                <p>Loading...</p>
+                <p>Searching...</p>
             )}
         </div>
     );

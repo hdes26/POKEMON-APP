@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { Pokemon } from "../types/pokemon";
 
-
 const POKEMON_QUERY = `
-  query getPokemons($limit: Int!) {
-    pokemon_v2_pokemon(limit: $limit) {
+  query getPokemons($id: Int!) {
+    pokemon_v2_pokemon(where: { id: { _eq: $id } }) {
       id
       name
       pokemon_v2_pokemonsprites {
@@ -13,14 +12,12 @@ const POKEMON_QUERY = `
     }
   }
 `;
-
-
-const useGetPokemons = () => {
-
+const useGetPokemonsById = (searchTerm: string) => {
     const [pokemonList, setPokemonList] = useState<Pokemon[]>([]);
 
-    const fetchPokemons = async () => {
-        try {            
+    const fetchPokemons = async (id: number) => {
+        try {
+            
             const response = await fetch('https://beta.pokeapi.co/graphql/v1beta', {
                 method: 'POST',
                 headers: {
@@ -28,23 +25,30 @@ const useGetPokemons = () => {
                 },
                 body: JSON.stringify({
                     query: POKEMON_QUERY,
-                    variables: { limit: 9 },
+                    variables: { id },
                 }),
             });
             const data = await response.json();
-
             setPokemonList(data.data.pokemon_v2_pokemon);
         } catch (error) {
             console.error('Error fetching pokemons:', error);
         }
     };
 
-
     useEffect(() => {
-        fetchPokemons();
-    }, []);
+        if (searchTerm) {
+            const id = parseInt(searchTerm);
+            if (!isNaN(id)) {
+                fetchPokemons(id);
+            } else {
+                setPokemonList([]);
+            }
+        } else {
+            setPokemonList([]);
+        }
+    }, [searchTerm]);
 
-    return { pokemonList }
-}
+    return { pokemonList };
+};
 
-export default useGetPokemons;
+export default useGetPokemonsById;

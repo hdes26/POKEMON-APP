@@ -4,6 +4,7 @@ import Label from '../../atoms/Label/Label';
 import Image from '../../atoms/Image/Image';
 
 import './style.css';
+import { useNavigate } from 'react-router-dom';
 
 interface PokemonCardProps {
     number: string | number;
@@ -12,10 +13,14 @@ interface PokemonCardProps {
 }
 
 export const PokemonCard = (props: PokemonCardProps) => {
+    const navigate = useNavigate();
 
+    const handleClick = () => {
+        navigate(`/details/${props.number}`); // Redirige a la ruta deseada
+    };
 
     return (
-        <div className='pokemon-card'>
+        <div className='pokemon-card' onClick={handleClick}>
             <div className='number'>
                 <Label text={props.number} />
             </div>
