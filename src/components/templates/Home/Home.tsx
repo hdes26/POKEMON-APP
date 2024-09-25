@@ -12,7 +12,7 @@ import SortCard from '../../organism/SortCard/SortCard';
 
 
 export const Home = () => {
-    const currentModal = useAppSelector((state: any) => state.modalReducer.active)
+    const currentModal = useAppSelector((state) => state.modalReducer.active)    
 
     return (
         <div className="home">

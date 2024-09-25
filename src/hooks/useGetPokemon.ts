@@ -6,6 +6,11 @@ const POKEMON_ID_QUERY = `
     pokemon_v2_pokemon(where: { id: { _eq: $id } }) {
       id
       name
+      pokemon_v2_pokemontypes {
+        pokemon_v2_type {
+          name
+        }
+      }
       pokemon_v2_pokemonsprites {
         sprites
       }

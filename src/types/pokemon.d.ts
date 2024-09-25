@@ -10,4 +10,20 @@ export type Pokemon = {
             };
         };
     }>;
+    pokemon_v2_pokemontypes: Array<{
+        pokemon_v2_type: {
+            name: string
+        };
+    }>;
 };
+
+export type PokemonTypes =
+    | 'grass'
+    | 'fire'
+    | 'water'
+    | 'bug'
+    | 'normal'
+    | 'electric'
+    | 'psychic'
+    | 'ghost'
+

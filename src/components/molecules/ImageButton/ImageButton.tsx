@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 
 import Image from '../../atoms/Image/Image';
 
-import { active } from '../../../redux/features/modalSlice'
-import { useAppDispatch } from '../../../redux/hooks'
-
 import './style.css';
 
 interface ImageButtonProps {
@@ -16,18 +13,8 @@ interface ImageButtonProps {
 }
 
 export const ImageButton = (props: ImageButtonProps) => {
-
-
-    const dispatch = useAppDispatch()
-
-    const handleOpenModal = () => {        
-        dispatch(active())
-    };
-
-
-
     return (
-        <button className='image-button' onClick={handleOpenModal}>
+        <button className='image-button'>
             <Image alt='len' src={props.src} width={props.width} height={props.height} />
         </button>
 
